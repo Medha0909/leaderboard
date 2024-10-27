@@ -16,7 +16,7 @@ function Login(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     window.sessionStorage.setItem("username", credentials.username);
-    const response = await fetch("http://localhost:7000/api/auth/v1/login", {
+    const response = await fetch("https://leaderboard-9h8r.onrender.com/api/auth/v1/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
