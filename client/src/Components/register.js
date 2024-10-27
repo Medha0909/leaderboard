@@ -20,7 +20,7 @@ export default function Register(props) {
     e.preventDefault();
     window.sessionStorage.setItem("username", credentials.username);
     const { username, firstName, lastName, email, password } = credentials;
-    const response = await fetch("http://localhost:7000/api/auth/v1/register", {
+    const response = await fetch("https://leaderboard-9h8r.onrender.com/api/auth/v1/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
