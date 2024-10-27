@@ -1,0 +1,32 @@
+@media screen and (max-width: 768px) {
+
+  .le{
+    width: 360px; 
+    margin-left: 0px;
+ }
+ .App{
+  width: 100%;
+ }
+ .navb{
+  margin-right: -95px;
+ }
+ .na{
+  width: 8px;
+ }
+ .user{
+  margin-left: -35px;
+ }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .le{
+    width: 563px; 
+    margin-left: 129px;
+ }
+ .user{
+  margin-left: 98px;
+ }
+}
+
+
+
+

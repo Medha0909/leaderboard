@@ -1,0 +1,16 @@
+@media screen and (max-width: 768px) {
+
+    .con{
+     position: absolute;
+     margin-left: 65px;
+     margin-top: -76px;
+    }
+    .fot{
+     height: 155px;
+    }
+    .li{
+     margin-top: 10px;
+     margin-bottom: 5px;
+    }
+    
+   }

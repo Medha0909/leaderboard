@@ -1,0 +1,101 @@
+body.active-modal { 
+    overflow-y: hidden; 
+} 
+ 
+.btn-modal { 
+    padding: 10px 20px; 
+    display: block; 
+    margin: 100px auto 0; 
+    font-size: 18px; 
+    position: fixed;
+} 
+ 
+.modal, .overlay { 
+    width: 100vw; 
+    height: 100vh; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    position: fixed; 
+} 
+ 
+.overlay { 
+    background-color: rgba(30, 29, 29, 0.8); 
+} 
+.modal-content { 
+    position: absolute;
+    height: 360px; 
+    top: 40%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    line-height: 1.4; 
+    background: linear-gradient(180deg, #111111 -100%, #171718 100%); 
+    padding: 14px 28px; 
+    border-radius: 3px; 
+    max-width: 600px; 
+    min-width: 300px; 
+} 
+ 
+.close-modal { 
+    position: absolute; 
+    top: 10px; 
+    right: 10px; 
+    padding: 5px 7px; 
+    border: none;
+    color: white;
+    padding: 5px 11px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.close-modal:hover{
+    background-color:red;
+
+}
+h2{
+    display: block;
+  font-size: 2em;
+  padding: 30px;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left:1px;
+  margin-right: 0;
+  font-weight: bold;
+  color:aliceblue;
+}
+.submit{
+    position: absolute; 
+    top: 301px; 
+    right: 145.9px; 
+    padding: 5px 7px; 
+    background-color: #6200EA;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.file{
+    display: block;
+  font-size: 0.9em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 59px;
+  margin-right: 0;
+  color:aliceblue;
+   
+}
+@media (max-width: 768px) {  
+    
+    .pop{
+      margin-left: 135px;
+      width: 460px;
+      height:290px;
+    } 
+  }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .pop{
+      margin-left: 145px;
+     
+    } 
+  }
