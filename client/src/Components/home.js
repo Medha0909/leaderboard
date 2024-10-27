@@ -13,7 +13,7 @@ var z1=0;
     fetchUsers();
   },[])
   function fetchUsers() {
-    fetch("http://localhost:7000/api/user/v1/get-users", {
+    fetch("https://leaderboard-9h8r.onrender.com/api/user/v1/get-users", {
       method: "GET",
     })
       .then((res) => res.json())
@@ -26,7 +26,7 @@ var z1=0;
   const pointsAdded = async (e) => {
     e.preventDefault();
     window.sessionStorage.setItem("username",z);
-    const response = await fetch("http://localhost:7000/api/user/v1/claim-points", {
+    const response = await fetch("https://leaderboard-9h8r.onrender.com/api/user/v1/claim-points", {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
