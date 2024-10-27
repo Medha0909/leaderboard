@@ -33,7 +33,7 @@ function Login(props) {
       //save the authh token and redirect
 
       localStorage.setItem("token", json.authtoken);
-
+      alert("Registered Successfully");
       //console.log(localStorage.getItem('token'))
       navigate("/leaderboard");
     }
