@@ -5,6 +5,7 @@ import { FaRegUser } from "react-icons/fa";
 
 function Home() {
   const [users, setUsers] = useState([]);
+  const [temp, setTemp] = useState();
 
 var z="";
 var z1=0;
@@ -23,8 +24,9 @@ var z1=0;
       });
   }
 
-  const pointsAdded = async (e) => {
+  const pointsAdded = async (z,e) => {
     e.preventDefault();
+    console.log(z)
     window.sessionStorage.setItem("username",z);
     const response = await fetch("https://leaderboard-9h8r.onrender.com/api/user/v1/claim-points", {
       method: "PATCH",
@@ -45,7 +47,9 @@ var z1=0;
       alert(json.message);
     }
   };
+function p(){
 
+}
   return (
     <div>     
 
@@ -74,22 +78,19 @@ var z1=0;
       </thead> 
     <tbody className="text-gray-700"> 
 
-    {users.map((data) => {z=data.username 
+    {users.map((data) => {
 
 return(
 
-<tr onClick={pointsAdded}> 
-  
+<tr onClick={(e)=>pointsAdded(data.username,e)}> 
+    
        <td  className="w-1/3 text-left py-3 px-4">{data.username}</td>
         <td className="w-1/3 text-left py-3 px-4">Rank:<span className="text-lg text-green-500">{z1=z1+1}</span></td> 
         <td className="text-left py-3 px-4"><a className="text-red-500 hover:text-blue-500" href="">Prize: Rs. { Math.floor(Math.random() * 100) + 10}</a></td> 
         <td className="text-left py-3 px-4"><a className="text-blue-500 " href="">{data.Points}</a></td> 
 </tr>
-      
-
-
+    
   )
-
 })}
 
       
