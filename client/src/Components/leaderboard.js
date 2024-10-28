@@ -17,7 +17,7 @@ var z1=0;
     fetchUsers();
   },[])
   const onSubmit = () => {
-    setModal(!modal);
+    setModal(false);
   };
 
   function fetchUsers() {
@@ -31,10 +31,10 @@ var z1=0;
       });
   }
 
-  const toggleModal = async (e) => {
-    setModal(!modal);
-
+  const toggleModal = async (z,e) => {
     e.preventDefault();
+    setModal(true);
+console.log(z)
     window.sessionStorage.setItem("username",z);
     const response = await fetch("https://leaderboard-9h8r.onrender.com/api/user/v1/your-history", {
       method: "POST",
@@ -82,22 +82,16 @@ var z1=0;
       </thead> 
     <tbody className="text-gray-700"> 
 
-    {users.map((data) => {z=data.username 
+    {users.map((data) => {
 
 return(
-  <tr> 
-
-                    <div className='  mb-[40px]' >
-                                     <button onClick={toggleModal} >
-
-                  <td  className="w-[250px] absolute text-left  text-left py-3 px-4">{data.username}</td>
-        <td className="w-[550px] left-[80px] absolute text-right py-3 px-4">Rank:<span className="text-lg right-[30px] text-green-500">{z1=z1+1}</span></td> 
-        <td className="w-[450px] left-[610px] absolute text-right py-3 px-4"><a className="text-red-500 hover:text-blue-500" href="">Prize: Rs. { Math.floor(Math.random() * 100) + 10}</a></td> 
-        <td className="w-[450px] left-[980px] absolute text- py-3 px-4"><a className="text-blue-500 " href="">{data.Points}</a></td> 
-        </button> 
-        </div>
-      
-        </tr> 
+<tr onClick={(e)=>toggleModal(data.username,e)}> 
+    
+    <td  className="w-1/3 text-left py-3 px-4">{data.username}</td>
+     <td className="w-1/3 text-left py-3 px-4">Rank:<span className="text-lg text-green-500">{z1=z1+1}</span></td> 
+     <td className="text-left py-3 px-4"><a className="text-red-500 hover:text-blue-500" href="">Prize: Rs. { Math.floor(Math.random() * 100) + 10}</a></td> 
+     <td className="text-left py-3 px-4"><a className="text-blue-500 " href="">{data.Points}</a></td> 
+</tr>
 
   )
 
@@ -111,19 +105,17 @@ return(
           <span className="ml-4  text-xl ml-[244px]">Points</span>
         </ul>
       <ul className="divide-gray-300 divide-y">
-      {users.map((data) => {z=data.username 
-      {
-      values.map((data) => {
+      {values.map((data) => {
 
 return(
 
         <li className="mb-2 py-2">
-          <span className="font-bold ">Date:</span><span className="text-red-300">values.date</span>
-          <span className="ml-4 font-bold ml-[165px]">Points Awarded:</span> <span className="text-green-500">{values.pointsAwarded}</span>
+          <span className="font-bold ">Date:</span><span className="text-red-300">{data.date}</span>
+          <span className="ml-4 font-bold ml-[165px]">Points Awarded:</span> <span className="text-green-500">{data.pointsAwarded}</span>
         </li>
-)})}})}
+)})}
       </ul>
-      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Close</button>
+      <button onClick={onSubmit} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Close</button>
     </div>
           </div>        )}
 
